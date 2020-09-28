@@ -1,0 +1,22 @@
+{
+  "name": "testing-eslint-config",
+  "version": "1.0.0",
+  "description": "An example project to show how to test ESLint configurations.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test:eslintConfig": "eslint __eslinttests__ --report-unused-disable-directives"
+  },
+  "keywords": [
+    "example",
+    "eslint"
+  ],
+  "author": "Robin Cussol",
+  "license": "ISC",
+  "dependencies": {
+    "date-fns": "^2.16.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.10.0"
+  }
+}
