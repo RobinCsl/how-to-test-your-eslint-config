@@ -13,7 +13,7 @@ For example, you could try:
 - to remove the configuration which restricts `date-fns/locale` from being imported;
 - to add an `// eslint-disable-next-line` in `index.js` to suppress the linting error;
 - to copy `index.js` into a nested folder and add your own `.eslintrc.js` file which would override the `no-restricted-import` rule (this should keep `npm run test:eslintConfig` passing...);
-- to harden this setup with the suggestions from my [How to test your ESLint config](https://www.robincussol.com/how-to-test-your-eslint-config) article.
+- to harden this setup with the suggestions from my [How to test your ESLint config](https://www.robincussol.com/how-to-test-your-eslint-config#not-a-silver-bullet) article.
 
 ### License
 
