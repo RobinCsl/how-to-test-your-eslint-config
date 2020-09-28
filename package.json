@@ -12,6 +12,7 @@
     "eslint"
   ],
   "author": "Robin Cussol",
+  "repository": "github:RobinCsl/how-to-test-your-eslint-config",
   "license": "ISC",
   "dependencies": {
     "date-fns": "^2.16.1"
