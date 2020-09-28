@@ -2,44 +2,18 @@
 
 This project is supporting the [How to test your ESLint config](https://www.robincussol.com/how-to-test-your-eslint-config) article on my blog.
 
-### How this repo was initiliased
+[![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/RobinCsl/how-to-test-your-eslint-config)
 
-- `npm init -y`
-- `npm install --dev eslint`
-- `npm install date-fns`
-- `eslint --init`
+Remixing on Glitch will allow you to have access to a terminal to run `npm run lint` or `npm run test:eslintConfig`. You could experiment with commenting/uncommenting certain parts of this repo and see how it affects these 2 npm scripts.
 
-  ```
-  ✔ How would you like to use ESLint? · problems
-  ✔ What type of modules does your project use? · esm
-  ✔ Which framework does your project use? · none
-  ✔ Does your project use TypeScript? · No / Yes
-  ✔ Where does your code run? · node
-  ✔ What format do you want your config file to be in? · JavaScript
-  Successfully created .eslintrc.js file in ~/Repositories/testing-eslint-config
-  ```
+> To access the terminal on Glitch, you can go into `Tools` (bottom left corner) > `Terminal`, or press <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>X</kbd>.
 
-- add this rule to `.eslintrc.js`:
+For example, you could try:
 
-  ```javascript
-  "no-restricted-imports": [
-    "error",
-    {
-      paths: [
-        {
-          name: "date-fns/locale",
-          message:
-          "Please, import a specific locale instead, e.g. `import enUS from 'date-fns/locale/en-US';`",
-        },
-      ],
-      patterns: ["!date-fns/locale/*"],
-    },
-  ],
-
-  ```
-
-- add an `__eslinttests__` folder with the offending code
-- add a `test:eslintConfig` npm script in your `package.json` with command `"eslint __eslinttests__ --report-unused-disable-directives"`.
+- to remove the configuration which restricts `date-fns/locale` from being imported;
+- to add an `// eslint-disable-next-line` in `index.js` to suppress the linting error;
+- to copy `index.js` into a nested folder and add your own `.eslintrc.js` file which would override the `no-restricted-import` rule (this should keep `npm run test:eslintConfig` passing...);
+- to harden this setup with the suggestions from my [How to test your ESLint config](https://www.robincussol.com/how-to-test-your-eslint-config) article.
 
 ### License
 
